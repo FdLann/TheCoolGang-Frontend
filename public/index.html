@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <!-- Favicon -->
+  <link href="../src/components/images/fotoproduk3rujak.JPG" rel="icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/5O5h+lZ5F" crossorigin="anonymous"
+    rel="stylesheet" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/stylee.css" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link href="../src/scss/bootstrap.scss" />
+  <link href="../src/scss/bootstrap/scss/bootstrap.scss" />
+  <link href="../src/scss/bootstrap/scss/_accordion.scss" />
+  <link href="../src/scss/bootstrap/scss/_navbar.scss" />
+  <link href="../src/scss/bootstrap/scss/_nav.scss" />
+  <link href="../src/lib/animate/animate.css" rel="stylesheet" />
+  <link href="../src/lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="../src/scss/bootstrap/scss/_transitions.scss" />
+  <link href="../src/lib/owlcarousel/assets/owl.carousel.css" />
+  <link rel="stylesheet" href="../src/lib/owlcarousel/assets/owl.theme.default.css" />
+  <link rel="stylesheet" href="../src/lib/owlcarousel/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="../src/lib/owlcarousel/assets/owl.theme.green.css" />
+  <link rel="stylesheet" href="../src/lib/owlcarousel/assets/owl.theme.green.min.css" />
+  <link rel="stylesheet" href="../src/lib/owlcarousel/assets/owl.video.play.png" />
+  <link rel="stylesheet" href="../src/scss/bootstrap/scss/utilities/_api.scss" />
+  <link rel="stylesheet" href="../src/scss/bootstrap/scss/forms/_floating-labels.scss" />
+  <link rel="stylesheet" href="../src/scss/bootstrap/scss/_dropdown.scss" />
+  <link rel="stylesheet" href="../src/scss/bootstrap/scss/_spinners.scss" />
+
+  <link href="../src//lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="../src/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Rujak Klasik dan Bubur Ubi</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script>
+    (function ($) {
+      "use strict";
+
+      // Spinner
+      var spinner = function () {
+        setTimeout(function () {
+          if ($("#spinner").length > 0) {
+            $("#spinner").removeClass("show");
+          }
+        }, 1);
+      };
+      spinner();
+
+      // Initiate the wowjs
+      new WOW().init();
+
+      // Fixed Navbar
+      $(window).scroll(function () {
+        if ($(window).width() < 992) {
+          if ($(this).scrollTop() > 45) {
+            $(".fixed-top").addClass("bg-white shadow");
+          } else {
+            $(".fixed-top").removeClass("bg-white shadow");
+          }
+        } else {
+          if ($(this).scrollTop() > 45) {
+            $(".fixed-top").addClass("bg-white shadow").css("top", -45);
+          } else {
+            $(".fixed-top").removeClass("bg-white shadow").css("top", 0);
+          }
+        }
+      });
+
+      // Back to top button
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $(".back-to-top").fadeIn("slow");
+        } else {
+          $(".back-to-top").fadeOut("slow");
+        }
+      });
+      $(".back-to-top").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+        return false;
+      });
+
+      // Testimonials carousel
+      $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 25,
+        loop: true,
+        center: true,
+        dots: false,
+        nav: true,
+        navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          768: {
+            items: 2,
+          },
+          992: {
+            items: 3,
+          },
+        },
+      });
+    })(jQuery);
+    $(document).ready(function () {
+      $("#customerReviewsCarousel").carousel();
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../src/lib/wow/wow.min.js"></script>
+  <script src="../src/lib/easing/easing.min.js"></script>
+  <script src="../src/lib/waypoints/waypoints.min.js"></script>
+  <script src="../src/lib/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>
